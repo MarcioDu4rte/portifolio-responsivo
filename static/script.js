@@ -22,3 +22,25 @@ navItem.forEach(item => {
         }
     })
 })
+
+// Animear todos os itens na tela que tiverem anime meu atributo data-anime
+
+const item = document.querySelectorAll("[data-anime]");
+
+const animeScroll = () => {
+    const windowsTop = window.pageYOffset + window.innerHeight * 0.85;
+
+    item.forEach((element) => {
+        if (windowsTop > element.offsetTop) {
+            element.classList.add("animate");
+        } else {
+            element.classList.remove("animate");
+        }
+    });
+};
+
+animeScroll();
+
+window.addEventListener("scroll", () => {
+    animeScroll();
+});
