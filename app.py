@@ -40,12 +40,12 @@ def send():
         )
 
         msg = Message(
-            subject=f'{formContato.Nome} te enviou uma mensagem no Portifólio',
+            subject=f'{formContato.nome} te enviou uma mensagem no Portifólio',
             sender=app.config.get("MAIL_USERNAME"),
             recipients=['mdssolucoes@gmail.com',
                         app.config.get("MAIL_USERNAME")],
             body=f'''
-            {formContato.Nome} com o e-mail {formContato.email}, te enviou a seguinte 
+            {formContato.nome} com o e-mail {formContato.email}, te enviou a seguinte 
             mensagem: 
 
             {formContato.mensagem}
